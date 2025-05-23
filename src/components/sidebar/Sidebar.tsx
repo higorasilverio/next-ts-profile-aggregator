@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(true)
@@ -22,7 +23,7 @@ export default function Sidebar() {
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        {isExpanded ? '<' : '>'}
+        {isExpanded ? <ChevronLeft size={20} color="gray" /> : <ChevronRight size={20} color="gray" />}
       </button>
 
       <div className={`flex flex-col items-center gap-6 p-4 ${!isExpanded && 'items-center'}`}>
